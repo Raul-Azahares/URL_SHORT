@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Short</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/customize.css' %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"/>
+</head>
+<body>
+	<h1>URL Short</h1>
+	<div class="content">
+		{% block content %}
+            	<p> Short : <a href="{{ object.short_url }}">{{ site_url }}{{ object.short_url }}</a></p>
+	<p> Original: {{ object.url }}</p>
+	<div class="back-button">
+		<a href="{% url 'home' %}">Back</a>
+	</div>
+		{% endblock %}
+	</div>
+</body>
+</html>
